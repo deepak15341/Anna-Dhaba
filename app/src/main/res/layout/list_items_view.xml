@@ -1,26 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
+<androidx.appcompat.widget.LinearLayoutCompat
+    xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content">
+    android:layout_height="wrap_content"
+    android:layout_margin="10dp">
 
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="10dp"
-        android:elevation="10dp"
-        android:padding="10dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.5">
+        android:elevation="10dp">
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical">
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -34,66 +29,87 @@
                 android:layout_marginEnd="10dp"
                 android:hint="item name"
                 android:textSize="22sp"
-                android:textStyle="bold" />
+                android:textStyle="bold"
+                android:gravity="center"
+                android:padding="10dp"/>
+
             <ImageButton
                 android:layout_width="100dp"
                 android:id="@+id/itemImage"
                 android:layout_height="100dp"
-                android:background="#03A9F4"/>
+                android:background="#03A9F4"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="10dp"
+                android:contentDescription="itemImage" />
+
         </LinearLayout>
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/laybutton"
             android:layout_gravity="center"
             android:gravity="right">
+
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
-                android:layout_weight="1">
+                android:layout_weight="1"
+                android:paddingBottom="10dp">
 
             <TextView
                 android:layout_width="0dp"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
                 android:layout_weight="3"
                 android:layout_marginLeft="10dp"
                 android:textSize="22sp"
                 android:textStyle="bold"
+                android:gravity="center"
                 android:hint="half"
-                android:id="@+id/halfPrice"/>
+                android:id="@+id/halfPrice" />
+
                 <androidx.appcompat.widget.AppCompatButton
-                    android:layout_width="100dp"
+                    android:id="@+id/addItemhalfbtn"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:background="@drawable/button_custom"
                     android:layout_marginStart="10dp"
-                    android:text="Add half"
-                    android:id="@+id/addItemhalfbtn"/>
+                    android:layout_marginEnd="10dp"
+                    android:background="@drawable/button_custom"
+                    android:text="Add half" />
+
             </LinearLayout>
+
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_weight="1">
-            <TextView
+                android:layout_weight="1"
+                android:paddingBottom="10dp">
+
+                <TextView
                 android:layout_width="0dp"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
                 android:layout_weight="3"
                 android:layout_marginLeft="10dp"
                 android:textSize="22sp"
                 android:textStyle="bold"
                 android:hint="full"
-                android:id="@+id/fullPrice"/>
+                android:gravity="center"
+                android:id="@+id/fullPrice"
+                />
 
-
-            <androidx.appcompat.widget.AppCompatButton
-                android:layout_width="100dp"
+                <androidx.appcompat.widget.AppCompatButton
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:background="@drawable/button_custom"
                 android:layout_marginStart="10dp"
                 android:text="Add full"
-                android:id="@+id/addItembtn"/>
-        </LinearLayout>
+                android:id="@+id/addItembtn"
+                android:layout_marginEnd="10dp"/>
+
+            </LinearLayout>
 
         </LinearLayout>
+
         </LinearLayout>
 
     </androidx.cardview.widget.CardView>
