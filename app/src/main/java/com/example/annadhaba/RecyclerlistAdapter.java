@@ -52,6 +52,7 @@ public class RecyclerlistAdapter extends RecyclerView.Adapter<RecyclerlistAdapte
             halfPrice =itemView.findViewById(R.id.halfPrice);
            fullPrice =itemView.findViewById(R.id.fullPrice);
            itemImage =itemView.findViewById(R.id.itemImage);
+
         }
 
     }
