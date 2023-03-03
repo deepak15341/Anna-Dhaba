@@ -7,6 +7,7 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
+import androidx.appcompat.widget.AppCompatButton;
 import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
@@ -45,6 +46,7 @@ public class RecyclerlistAdapter extends RecyclerView.Adapter<RecyclerlistAdapte
     public class ViewHolder extends RecyclerView.ViewHolder {
         TextView foodItem,halfPrice,fullPrice;
         ImageView itemImage;
+        AppCompatButton addItemHalfbtn,addItemFullbtn;
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
 
