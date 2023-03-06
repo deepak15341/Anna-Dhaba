@@ -33,7 +33,11 @@ public class RecyclerlistAdapter extends RecyclerView.Adapter<RecyclerlistAdapte
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
+
+        //getting the positon on an integer variable
        int address = holder.getAdapterPosition();
+
+       //setting the data in their respective recyclerView Position
         holder.foodItem.setText(arrayList.get(position).name);
         holder.halfPrice.setText(arrayList.get(position).half);
         holder.fullPrice.setText(arrayList.get(position).full);
@@ -41,17 +45,29 @@ public class RecyclerlistAdapter extends RecyclerView.Adapter<RecyclerlistAdapte
         holder.addItem.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                TextView kartItemTextView,addItemhalfTextView,addItemFullTextView;
-                AppCompatButton btnclos;
+
+                    //initializing the views
+                    TextView kartItemTextView, addItemhalfTextView, addItemFullTextView;
+                    AppCompatButton btnclos, addHalfItembtn, addhFullItembtn;
+
                 Dialog dialog = new Dialog(context);
-                dialog.setContentView(R.layout.add_to_kart_dialogue);
-                kartItemTextView = dialog.findViewById(R.id.kartItemTextView);
-                addItemhalfTextView = dialog.findViewById(R.id.addItemhalfTextView);
-                addItemFullTextView =dialog.findViewById(R.id.addItemFullTextView);
-                btnclos = dialog.findViewById(R.id.btnclose);
+
+                    //finding id of the dialog box view
+
+                    dialog.setContentView(R.layout.add_to_kart_dialogue);
+                    kartItemTextView = dialog.findViewById(R.id.kartItemTextView);
+                    addItemhalfTextView = dialog.findViewById(R.id.addItemhalfTextView);
+                    addItemFullTextView = dialog.findViewById(R.id.addItemFullTextView);
+                    addHalfItembtn = dialog.findViewById(R.id.addHalfItembtn);
+                    addhFullItembtn = dialog.findViewById(R.id.addhFullItembtn);
+                    btnclos = dialog.findViewById(R.id.btnclose);
+
+                    //Set actions on the respective views
                 kartItemTextView.setText(arrayList.get(address).name);
                 addItemhalfTextView.setText(arrayList.get(address).half);
                 addItemFullTextView.setText(arrayList.get(address).full);
+
+                //performing close dialog operation on the click of the close button
                 btnclos.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
@@ -72,14 +88,16 @@ public class RecyclerlistAdapter extends RecyclerView.Adapter<RecyclerlistAdapte
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder {
+
+        //Initializing the views of the list item views
         TextView foodItem,halfPrice,fullPrice;
         ImageView itemImage;
-        AppCompatButton addItemHalfbtn,addItemFullbtn;
         LinearLayout fullLinearRow;
         Button addItem;
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
 
+            //finding the id's of the respective Views
             foodItem =itemView.findViewById(R.id.foodItem);
             halfPrice =itemView.findViewById(R.id.halfPrice);
            fullPrice =itemView.findViewById(R.id.fullPrice);
