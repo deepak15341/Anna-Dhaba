@@ -57,7 +57,7 @@ ArrayList<itemModelRecycler> arrayList =new ArrayList<>();
         arrayList.add(new itemModelRecycler(R.drawable.anna_dhaba_icon,"Normal Thali","NA","60"));
         arrayList.add(new itemModelRecycler(R.drawable.anna_dhaba_icon,"Special Thali","NA","90"));
 
-        RecyclerlistAdapter adapter =new RecyclerlistAdapter(this, arrayList);
+        RecyclerlistAdapter adapter =new RecyclerlistAdapter(MainActivity.this, arrayList);
         recyclerView.setAdapter(adapter);
     }
 }

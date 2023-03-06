@@ -1,10 +1,13 @@
 package com.example.annadhaba;
 
+import android.app.Dialog;
 import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.appcompat.widget.AppCompatButton;
@@ -35,6 +38,14 @@ public class RecyclerlistAdapter extends RecyclerView.Adapter<RecyclerlistAdapte
         holder.halfPrice.setText(arrayList.get(position).half);
         holder.fullPrice.setText(arrayList.get(position).full);
         holder.itemImage.setImageResource(arrayList.get(position).img);
+        holder.addItem.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Dialog dialog = new Dialog(context);
+                dialog.setContentView(R.layout.add_to_kart_dialogue);
+                dialog.show();
+            }
+        });
 
     }
 
@@ -47,6 +58,8 @@ public class RecyclerlistAdapter extends RecyclerView.Adapter<RecyclerlistAdapte
         TextView foodItem,halfPrice,fullPrice;
         ImageView itemImage;
         AppCompatButton addItemHalfbtn,addItemFullbtn;
+        LinearLayout fullLinearRow;
+        Button addItem;
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
 
@@ -54,6 +67,8 @@ public class RecyclerlistAdapter extends RecyclerView.Adapter<RecyclerlistAdapte
             halfPrice =itemView.findViewById(R.id.halfPrice);
            fullPrice =itemView.findViewById(R.id.fullPrice);
            itemImage =itemView.findViewById(R.id.itemImage);
+           fullLinearRow =itemView.findViewById(R.id.fullLinearRow);
+           addItem =itemView.findViewById(R.id.addItem);
 
         }
 
