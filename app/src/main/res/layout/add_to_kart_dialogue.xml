@@ -1,17 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.appcompat.widget.LinearLayoutCompat
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
-    android:layout_width="350dp"
     android:gravity="center"
+    android:layout_width="375dp"
     android:layout_height="wrap_content">
 
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_margin="10dp"
+        app:cardElevation="10dp"
+        app:cardCornerRadius="25dp"
         android:elevation="@dimen/cardview_default_elevation"
-        android:outlineAmbientShadowColor="#7E7C7C">
+        android:outlineAmbientShadowColor="#575555">
 
         <androidx.appcompat.widget.LinearLayoutCompat
             android:layout_width="match_parent"
@@ -85,17 +87,55 @@
                         android:gravity="center"
                         android:textSize="22sp"/>
 
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1">
                     <androidx.appcompat.widget.AppCompatButton
-                        android:id="@+id/addHalfItembtn"
-                        android:layout_width="wrap_content"
-                        android:layout_height="match_parent"
+                        android:id="@+id/removeitemhalfbtn"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
                         android:layout_marginStart="10dp"
                         android:layout_marginEnd="10dp"
                         android:layout_marginTop="10dp"
                         android:layout_marginBottom="10dp"
                         android:gravity="center"
+                        android:textSize="22sp"
+                        android:layout_weight="1"
+                        android:textStyle="bold"
                         android:background="@drawable/button_cstm"
-                        android:text="Add item" />
+                        android:text="-" />
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:id="@+id/addCountHalfTextView"
+                            android:layout_height="wrap_content"
+                            android:hint="00"
+                            android:textColor="#FF9800"
+                            android:layout_weight="1"
+                            android:textStyle="bold"
+                            android:gravity="center"
+                            android:layout_gravity="center"
+                            android:textSize="22sp"/>
+
+                        <androidx.appcompat.widget.AppCompatButton
+                            android:id="@+id/addHalfItembtn"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="10dp"
+                            android:layout_marginEnd="10dp"
+                            android:layout_marginTop="10dp"
+                            android:layout_marginBottom="10dp"
+                            android:gravity="center"
+                            android:textSize="22sp"
+                            android:layout_weight="1"
+                            android:textStyle="bold"
+                            android:background="@drawable/button_cstm"
+                            android:text="+" />
+                    </LinearLayout>
+
+
+
                 </LinearLayout>
 
 
@@ -126,17 +166,52 @@
                         android:gravity="center"
                         android:textSize="22sp"/>
 
-                    <androidx.appcompat.widget.AppCompatButton
-                        android:id="@+id/addhFullItembtn"
-                        android:layout_width="wrap_content"
-                        android:layout_height="match_parent"
-                        android:layout_marginStart="10dp"
-                        android:layout_marginEnd="10dp"
-                        android:layout_marginTop="10dp"
-                        android:layout_marginBottom="10dp"
-                        android:gravity="center"
-                        android:background="@drawable/button_cstm"
-                        android:text="Add item" />
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1">
+                        <androidx.appcompat.widget.AppCompatButton
+                            android:id="@+id/removeitemFullbtn"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="10dp"
+                            android:layout_marginEnd="10dp"
+                            android:layout_marginTop="10dp"
+                            android:layout_marginBottom="10dp"
+                            android:gravity="center"
+                            android:layout_weight="1"
+                            android:textSize="22sp"
+                            android:textStyle="bold"
+                            android:background="@drawable/button_cstm"
+                            android:text="-" />
+
+                        <TextView
+                            android:id="@+id/itemCountFullTextView"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:hint="00"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:textColor="#FF9800"
+                            android:textSize="22sp"
+                            android:textStyle="bold" />
+
+                        <androidx.appcompat.widget.AppCompatButton
+                            android:id="@+id/addFullItembtn"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="10dp"
+                            android:layout_marginEnd="10dp"
+                            android:layout_marginTop="10dp"
+                            android:layout_marginBottom="10dp"
+                            android:gravity="center"
+                            android:layout_weight="1"
+                            android:textSize="22sp"
+                            android:textStyle="bold"
+                            android:background="@drawable/button_cstm"
+                            android:text="+" />
+                    </LinearLayout>
                 </LinearLayout>
 
             </LinearLayout>
@@ -146,13 +221,13 @@
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
                 android:layout_gravity="center"
+                android:layout_marginTop="10dp"
                 android:layout_weight="1">
 
             <androidx.appcompat.widget.AppCompatButton
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Close"
-                android:layout_marginTop="10dp"
                 android:layout_marginBottom="10dp"
                 android:id="@+id/btnclose"
                 android:background="@drawable/button_cstm"/>

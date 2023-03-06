@@ -50,31 +50,32 @@ public class RecyclerlistAdapter extends RecyclerView.Adapter<RecyclerlistAdapte
                     TextView kartItemTextView, addItemhalfTextView, addItemFullTextView;
                     AppCompatButton btnclos, addHalfItembtn, addhFullItembtn;
 
-                Dialog dialog = new Dialog(context);
-
+                    Dialog dialog = new Dialog(context);
+                    dialog.setContentView(R.layout.add_to_kart_dialogue);
+                    dialog.show();
                     //finding id of the dialog box view
 
-                    dialog.setContentView(R.layout.add_to_kart_dialogue);
+
                     kartItemTextView = dialog.findViewById(R.id.kartItemTextView);
                     addItemhalfTextView = dialog.findViewById(R.id.addItemhalfTextView);
                     addItemFullTextView = dialog.findViewById(R.id.addItemFullTextView);
                     addHalfItembtn = dialog.findViewById(R.id.addHalfItembtn);
-                    addhFullItembtn = dialog.findViewById(R.id.addhFullItembtn);
+                    addhFullItembtn = dialog.findViewById(R.id.addFullItembtn);
                     btnclos = dialog.findViewById(R.id.btnclose);
 
                     //Set actions on the respective views
-                kartItemTextView.setText(arrayList.get(address).name);
-                addItemhalfTextView.setText(arrayList.get(address).half);
-                addItemFullTextView.setText(arrayList.get(address).full);
+                    kartItemTextView.setText(arrayList.get(address).name);
+                    addItemhalfTextView.setText(arrayList.get(address).half);
+                    addItemFullTextView.setText(arrayList.get(address).full);
+
 
                 //performing close dialog operation on the click of the close button
-                btnclos.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View view) {
-                        dialog.dismiss();
-                    }
-                });
-                dialog.show();
+                    btnclos.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View view) {
+                            dialog.dismiss();
+                        }
+                    });
 
 
             }
