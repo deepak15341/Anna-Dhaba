@@ -101,10 +101,10 @@ public class RecyclerlistAdapter extends RecyclerView.Adapter<RecyclerlistAdapte
             //finding the id's of the respective Views
             foodItem =itemView.findViewById(R.id.foodItem);
             halfPrice =itemView.findViewById(R.id.halfPrice);
-           fullPrice =itemView.findViewById(R.id.fullPrice);
-           itemImage =itemView.findViewById(R.id.itemImage);
-           fullLinearRow =itemView.findViewById(R.id.fullLinearRow);
-           addItem =itemView.findViewById(R.id.addItem);
+            fullPrice =itemView.findViewById(R.id.fullPrice);
+            itemImage =itemView.findViewById(R.id.itemImage);
+            fullLinearRow =itemView.findViewById(R.id.fullLinearRow);
+            addItem =itemView.findViewById(R.id.addItem);
 
 
 
