@@ -33,7 +33,7 @@ public class RecyclerlistAdapter extends RecyclerView.Adapter<RecyclerlistAdapte
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
-
+       int address = holder.getAdapterPosition();
         holder.foodItem.setText(arrayList.get(position).name);
         holder.halfPrice.setText(arrayList.get(position).half);
         holder.fullPrice.setText(arrayList.get(position).full);
@@ -41,9 +41,26 @@ public class RecyclerlistAdapter extends RecyclerView.Adapter<RecyclerlistAdapte
         holder.addItem.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                TextView kartItemTextView,addItemhalfTextView,addItemFullTextView;
+                AppCompatButton btnclos;
                 Dialog dialog = new Dialog(context);
                 dialog.setContentView(R.layout.add_to_kart_dialogue);
+                kartItemTextView = dialog.findViewById(R.id.kartItemTextView);
+                addItemhalfTextView = dialog.findViewById(R.id.addItemhalfTextView);
+                addItemFullTextView =dialog.findViewById(R.id.addItemFullTextView);
+                btnclos = dialog.findViewById(R.id.btnclose);
+                kartItemTextView.setText(arrayList.get(address).name);
+                addItemhalfTextView.setText(arrayList.get(address).half);
+                addItemFullTextView.setText(arrayList.get(address).full);
+                btnclos.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        dialog.dismiss();
+                    }
+                });
                 dialog.show();
+
+
             }
         });
 
@@ -69,6 +86,8 @@ public class RecyclerlistAdapter extends RecyclerView.Adapter<RecyclerlistAdapte
            itemImage =itemView.findViewById(R.id.itemImage);
            fullLinearRow =itemView.findViewById(R.id.fullLinearRow);
            addItem =itemView.findViewById(R.id.addItem);
+
+
 
         }
 

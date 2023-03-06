@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.appcompat.widget.LinearLayoutCompat
+    xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical"
-    android:layout_width="match_parent"
+    android:layout_width="350dp"
     android:gravity="center"
     android:layout_height="wrap_content">
 
@@ -26,6 +27,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Kart"
+                android:textColor="#FF9800"
                 android:textSize="50sp"
                 android:layout_gravity="center"
                 android:textStyle="bold"/>
@@ -43,6 +45,9 @@
                 android:layout_height="wrap_content"
                 android:hint="Item Name"
                 android:textStyle="bold"
+                android:textColor="#FF9800"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="20dp"
                 android:gravity="center"
                 android:textSize="22sp"/>
 
@@ -62,9 +67,20 @@
 
                     <TextView
                         android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="Half price"
+                        android:textColor="#FF9800"
+                        android:layout_marginBottom="10dp"
+                        android:textStyle="bold"
+                        android:gravity="center"
+                        android:textSize="22sp"/>
+
+                    <TextView
+                        android:layout_width="match_parent"
                         android:id="@+id/addItemhalfTextView"
                         android:layout_height="wrap_content"
                         android:hint="Half price"
+                        android:textColor="#FF9800"
                         android:textStyle="bold"
                         android:gravity="center"
                         android:textSize="22sp"/>
@@ -92,9 +108,20 @@
 
                     <TextView
                         android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="Half price"
+                        android:textColor="#FF9800"
+                        android:layout_marginBottom="10dp"
+                        android:textStyle="bold"
+                        android:gravity="center"
+                        android:textSize="22sp"/>
+
+                    <TextView
+                        android:layout_width="match_parent"
                         android:id="@+id/addItemFullTextView"
                         android:layout_height="wrap_content"
                         android:hint="Full price"
+                        android:textColor="#FF9800"
                         android:textStyle="bold"
                         android:gravity="center"
                         android:textSize="22sp"/>
@@ -126,7 +153,8 @@
                 android:layout_height="wrap_content"
                 android:text="Close"
                 android:layout_marginTop="10dp"
-                android:id="@+id/btnClose"
+                android:layout_marginBottom="10dp"
+                android:id="@+id/btnclose"
                 android:background="@drawable/button_cstm"/>
             </LinearLayout>
 
