@@ -2,10 +2,14 @@ package com.example.annadhaba;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.AppCompatButton;
+import androidx.appcompat.widget.Toolbar;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 
 import org.json.JSONObject;
@@ -13,6 +17,8 @@ import org.json.JSONObject;
 import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
+    Toolbar goToKarttoolbar;
+    ImageButton imageButton;
 ArrayList<itemModelRecycler> arrayList =new ArrayList<>();
 
     @Override
@@ -59,5 +65,19 @@ ArrayList<itemModelRecycler> arrayList =new ArrayList<>();
 
         RecyclerlistAdapter adapter =new RecyclerlistAdapter(MainActivity.this, arrayList);
         recyclerView.setAdapter(adapter);
+
+        goToKarttoolbar =findViewById(R.id.goToKarttoolBar);
+        setSupportActionBar(goToKarttoolbar);
+
+        imageButton =findViewById(R.id.imageButton);
+        imageButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent iKart =new Intent(MainActivity.this,kart.class);
+                startActivity(iKart);
+
+            }
+        });
+
     }
 }
