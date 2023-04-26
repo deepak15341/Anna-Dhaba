@@ -9,6 +9,8 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
+
 import androidx.annotation.NonNull;
 import androidx.appcompat.widget.AppCompatButton;
 import androidx.recyclerview.widget.RecyclerView;
@@ -76,26 +78,83 @@ public class RecyclerlistAdapter extends RecyclerView.Adapter<RecyclerlistAdapte
                     addItemFullTextView.setText(arrayList.get(address).full);
 
 
-                //performing close dialog operation on the click of the close button
-                    btnClose.setOnClickListener(new View.OnClickListener() {
-                        @Override
-                        public void onClick(View view) {
-                            dialog.dismiss();
-                        }
-                    });
-                //performing Save dialog operation on the click of the Save button
-                    btnsave.setOnClickListener(new View.OnClickListener() {
+
+
+                    //Remove Half item from Dialogue
+                    removeItemHalfBtn.setOnClickListener(new View.OnClickListener() {
                         @Override
                         public void onClick(View view) {
 
+                            if(Integer.parseInt(addCountHalfTextView.getText().toString())>0){
+                                int x = Integer.parseInt(addCountHalfTextView.getText().toString())-1;
+                                addCountHalfTextView.setText(String.valueOf(x));
+                            }
+                            else{
+                                Toast.makeText(context, "Item not added", Toast.LENGTH_SHORT).show();
+                            }
+
                         }
                     });
+
+                    //add Half item to Dialogue
+                addHalfItemBtn.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+
+                            int x = Integer.parseInt(addCountHalfTextView.getText().toString()) + 1;
+                            addCountHalfTextView.setText(String.valueOf(x));
+
+
+                    }
+                });
+
+                //remove full item from dialogue
+                removeItemFullBtn.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        if(Integer.parseInt(addCountFullTextView.getText().toString())>0){
+                            int x = Integer.parseInt(addCountFullTextView.getText().toString())-1;
+                            addCountFullTextView.setText(String.valueOf(x));
+                        }
+                        else{
+                            Toast.makeText(context, "Item not added", Toast.LENGTH_SHORT).show();
+                        }
+
+                    }
+                });
+
+                //add full item to the dialogue
+                addFullItemBtn.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        int x = Integer.parseInt(addCountFullTextView.getText().toString()) + 1;
+                        addCountFullTextView.setText(String.valueOf(x));
+
+                    }
+                });
+
+                //performing close dialog operation on the click of the close button
+                btnClose.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        dialog.dismiss();
+                    }
+                });
+                //performing Save dialog operation on the click of the Save button
+                btnsave.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+
+                    }
+                });
 
 
             }
         });
 
     }
+
+    //Bind View Holder Ends here
 
     @Override
     public int getItemCount() {
