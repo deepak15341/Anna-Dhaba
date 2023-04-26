@@ -47,8 +47,8 @@ public class RecyclerlistAdapter extends RecyclerView.Adapter<RecyclerlistAdapte
             public void onClick(View view) {
 
                     //initializing the views
-                    TextView kartItemTextView, addItemHalfTextView, addItemFullTextView;
-                    AppCompatButton btnClose, addHalfItemBtn, addFullItemBtn;
+                    TextView kartItemTextView, addItemHalfTextView, addItemFullTextView,addCountHalfTextView,addCountFullTextView;
+                    AppCompatButton btnClose, addHalfItemBtn, addFullItemBtn,btnsave,removeItemHalfBtn,removeItemFullBtn;
 
                     Dialog dialog = new Dialog(context);
                     dialog.setContentView(R.layout.add_to_kart_dialogue);
@@ -59,9 +59,16 @@ public class RecyclerlistAdapter extends RecyclerView.Adapter<RecyclerlistAdapte
                     kartItemTextView = dialog.findViewById(R.id.kartItemTextView);
                     addItemHalfTextView = dialog.findViewById(R.id.addItemhalfTextView);
                     addItemFullTextView = dialog.findViewById(R.id.addItemFullTextView);
+                    addCountHalfTextView = dialog.findViewById(R.id.itemCountHalfTextView);
+                    addCountFullTextView = dialog.findViewById(R.id.itemCountFullTextView);
+                    removeItemHalfBtn = dialog.findViewById(R.id.removeitemhalfbtn);
                     addHalfItemBtn = dialog.findViewById(R.id.addHalfItembtn);
+                    removeItemFullBtn = dialog.findViewById(R.id.removeitemFullbtn);
                     addFullItemBtn = dialog.findViewById(R.id.addFullItembtn);
+
+
                     btnClose = dialog.findViewById(R.id.btnclose);
+                    btnsave = dialog.findViewById(R.id.btnsave);
 
                     //Set actions on the respective views
                     kartItemTextView.setText(arrayList.get(address).name);
@@ -74,6 +81,13 @@ public class RecyclerlistAdapter extends RecyclerView.Adapter<RecyclerlistAdapte
                         @Override
                         public void onClick(View view) {
                             dialog.dismiss();
+                        }
+                    });
+                //performing Save dialog operation on the click of the Save button
+                    btnsave.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View view) {
+
                         }
                     });
 
